@@ -7,6 +7,5 @@ def maxProfit(prices):
         buy2 = max(buy2, sell1 - price)
         sell2 = max(sell2, buy2 + price)
     return sell2
-
-prices = [3,3,5,0,0,3,1,4]
-print(maxProfit(prices))
+prices = [3, 3, 5, 0, 0, 3, 1, 4]
+print(maxProfit(prices)) 

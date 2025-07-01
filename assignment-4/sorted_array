@@ -1,0 +1,6 @@
+arr = [2, 4, 6, 8, 10, 12, 14]  
+
+mid_index = len(arr) // 2
+mid_element = arr[mid_index]
+
+print("Middle element:", mid_element)

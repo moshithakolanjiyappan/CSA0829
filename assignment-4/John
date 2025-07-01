@@ -1,0 +1,13 @@
+# Input values
+m = int(input("Enter total number of vehicles John has: "))
+n = int(input("Enter number of children: "))
+
+# Vehicles Peter gets = remaining after equal distribution
+x = m % n
+
+print("Peter gets", x, "vehicle(s).")
+
+if x % 2 == 0:
+    print("Peter is luckier (even number of vehicles).")
+else:
+    print("Peter is not luckier (odd number of vehicles).")

@@ -1,0 +1,13 @@
+arr = [1, 2, 3, 2, 4, 5, 1, 6, 3]
+
+repeated = []
+seen = []
+
+for elem in arr:
+    if elem in seen and elem not in repeated:
+        repeated.append(elem)
+    else:
+        seen.append(elem)
+
+print("Repeated elements:", repeated)
+

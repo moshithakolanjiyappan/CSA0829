@@ -1,0 +1,31 @@
+def max_profit(prices):
+    if not prices:
+        return 0
+
+    # First transaction profit (max profit if we sell up to day i)
+    profit1 = [0] * len(prices)
+    min_price = prices[0]
+
+    for i in range(1, len(prices)):
+        min_price = min(min_price, prices[i])
+        profit1[i] = max(profit1[i-1], prices[i] - min_price)
+
+    # Second transaction profit (max profit if we buy from day i onwards)
+    profit2 = [0] * len(prices)
+    max_price = prices[-1]
+
+    for i in range(len(prices)-2, -1, -1):
+        max_price = max(max_price, prices[i])
+        profit2[i] = max(profit2[i+1], max_price - prices[i])
+
+    # Combine profits of two transactions
+    max_total_profit = 0
+    for i in range(len(prices)):
+        max_total_profit = max(max_total_profit, profit1[i] + profit2[i])
+
+    return max_total_profit
+
+
+# Example usage:
+prices = [3,3,5,0,0,3,1,4]
+print("Maximum profit with at most 2 transactions:", max_profit(prices))

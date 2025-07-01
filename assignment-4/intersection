@@ -1,0 +1,10 @@
+arr1 = [1, 2, 3, 4, 5]
+arr2 = [3, 4, 5, 6, 7]
+
+intersection = []
+
+for elem in arr1:
+    if elem in arr2 and elem not in intersection:
+        intersection.append(elem)
+
+print("Intersection:", intersection)
